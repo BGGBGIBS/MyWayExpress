@@ -13,8 +13,9 @@ const auth0Controller = {
 
   login: async (req, res) => {
     try {
-      const { email, password } = req.body;
-      const authResult = await auth0Service.login(email, password);
+      const { user_email, user_password } = req.body;
+      console.log("Email :", user_email, "Password :", user_password);
+      const authResult = await auth0Service.login(user_email, user_password);
       res.status(200).json(authResult);
     } catch (error) {
       console.error(error);

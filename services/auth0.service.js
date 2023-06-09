@@ -20,23 +20,23 @@ const auth0Service = {
 
   login: async (user_email, user_password) => {
     try {
-      const response = await axios.post(`${AUTH0_ISSUER_BASE_URL}oauth/ro`, {
-        grant_type: 'password',
+      const response = await axios.post(`${AUTH0_ISSUER_BASE_URL}oauth/token`, {
+        grant_type: 'client_credentials',
         client_id: AUTH0_CLIENT_ID,
         client_secret: AUTH0_CLIENT_SECRET,
         audience: AUTH0_AUDIENCE,
         username: user_email,
         password: user_password,
         connection: 'Username-Password-Authentication',
-        scope: 'openid',
+        // scope: 'create read update delete',
       });
-      console.log("LOGIN DATA : ", response.data);
       return response.data;
     } catch (err) {
-      console.error(err);
+      console.error("ERROR : ",err);
       throw err;
     }
   },
+
 
   logout: () => {
     localStorage.removeItem('access_token');

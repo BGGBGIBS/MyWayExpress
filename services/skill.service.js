@@ -6,11 +6,26 @@ var db = require('../models');
 var skillService = {
     getAll : async (offset, limit) => {
 
-        const { rows, count } = await db.skill.findAndCountAll({
-            distinct : true,
-            offset : offset,
-            limit : limit,
+        ///remplcaer les await par then car await est bloquant
+        // const { rows, count } = await db.skill.findAndCountAll({
+        //     distinct : true,
+        //     offset : offset,
+        //     limit : limit,
+        // });
+        db.skill.findAndCountAll({
+            distinct: true,
+            offset: offset,
+            limit: limit,
+        })
+        .then(result => {
+            const { rows, count } = result;
+            // Le reste de votre code irait ici
+        })
+        .catch(error => {
+            // Gestion des erreurs
+            console.error(error);
         });
+        
         return {
             skills : rows.map(skill => new skillDTO(skill)),
             count

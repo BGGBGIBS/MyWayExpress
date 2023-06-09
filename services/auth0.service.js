@@ -13,8 +13,8 @@ const auth0Service = {
 
       return response.data;
     } catch (err) {
-      console.error(err);
-      throw err;
+      console.error("ERROR : ", err.message);
+      throw new Error('Failed to register: ' + err.message);
     }
   },
 

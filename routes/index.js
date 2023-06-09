@@ -1,16 +1,16 @@
-var router = require('express').Router();
+const router = require('express').Router();
 
-var userRouter = require('./user.router');
-var recordRouter = require('./record.router');
-var eventRouter = require('./event.router');
-var occupationRouter = require('./occupation.router');
-var institutionRouter = require('./institution.router');
-var scaleRouter = require('./scale.router');
-var gradeRouter = require('./grade.router');
-var skillRouter = require('./skill.router');
-var authRouter = require('./auth.router');
-var auth0Router = require('./auth0.router');
-var aresRouter = require('./ares.router');
+const userRouter = require('./user.router');
+const recordRouter = require('./record.router');
+const eventRouter = require('./event.router');
+const occupationRouter = require('./occupation.router');
+const institutionRouter = require('./institution.router');
+const scaleRouter = require('./scale.router');
+const gradeRouter = require('./grade.router');
+const skillRouter = require('./skill.router');
+const authRouter = require('./auth.router');
+const auth0Router = require('./auth0.router');
+const aresRouter = require('./ares.router');
 
 
 router.use('/record', recordRouter);

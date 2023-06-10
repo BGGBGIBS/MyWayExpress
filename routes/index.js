@@ -11,6 +11,7 @@ const skillRouter = require('./skill.router');
 const authRouter = require('./auth.router');
 const auth0Router = require('./auth0.router');
 const aresRouter = require('./ares.router');
+const paypalRouter = require('./paypal.router');
 
 
 router.use('/record', recordRouter);
@@ -24,6 +25,7 @@ router.use('/skill', skillRouter);
 router.use('/auth', authRouter);
 router.use('/auth0', auth0Router);
 router.use('/ares', aresRouter);
+router.use('/paypal', paypalRouter);
 
 
 module.exports = router;

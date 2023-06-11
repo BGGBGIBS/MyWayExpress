@@ -17,9 +17,7 @@ var userService = {
         } 
     },
     getById : async(id) => {
-        // console.log(id);
         const user = await db.user.findByPk(id); 
-        // console.log(user);
         return user ? new userDTO(user) : null; 
     },
     create : async(toAdd) => {
@@ -28,15 +26,10 @@ var userService = {
 
         let user;
         try {
-            // console.log("TO ADD : ", toAdd);
-            // console.log("USER TO ADD : ", toAdd.user_address);
-            // console.log("USER TO ADD : ", toAdd.user_role);
             toAdd.user_role ? toAdd.user_role : "user";
             user = await db.user.create(toAdd, { transaction });
-            // console.log("USER : ", user);
             await transaction.commit();
 
-            // console.log("USER ID : ", user.user_id);
             const addeduser = await db.user.findByPk(user.user_id);
 
             return addeduser ? new userDTO(addeduser) : null;

@@ -1,14 +1,14 @@
 var pagination = require('../middlewares/pagination.middleware');
-
+const paypalController = require('../controllers/paypal.controller');
 var paypalRouter = require('express').Router();
 
 
 paypalRouter.route('/token')
-    .post(paypalController)
+    .post(paypalController.postToken)
 paypalRouter.route('/orders')
-    .post(paypalController)
+    .post(paypalController.postOrders)
 paypalRouter.route('/orders/:orderID/capture')
-    .post(paypalController)
+    .post(paypalController.postOrdersID)
 
 module.exports = paypalRouter;
 

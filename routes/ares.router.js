@@ -9,10 +9,6 @@ aresRouter.route('/grade')
 
 aresRouter.use('/passerelle', aresPasserellesRouter);
 
-
-// aresRouter.route('/passerelleforbac')
-//     .get(pagination( { defaultLimit : 30, maxLimit : 200 }),aresController.getAllPasserellesForBac)
-
 aresRouter.route('/dataset')
     .get(pagination( { defaultLimit : 100, maxLimit : 2500 }), aresController.getAllDatasets)
 

@@ -19,7 +19,6 @@ var recordController = {
         res.status(200).json(record);
     },
     getByUserId : async (req,res) => {
-        console.log("USER ID : ", req.params.id);
         const record = await recordService.getByUserId(req.params.id);
         if(!record){
             res.sendStatus(404);
@@ -28,7 +27,6 @@ var recordController = {
         res.status(200).json(new SuccessArrayResponse(record));
     },
     create : async (req,res) => {
-        console.log("record", req.body);
         try {
             const record = await recordService.create(req.body);
             // res.location('/record/' + record.id);
@@ -49,7 +47,7 @@ var recordController = {
 
         }
         catch(err){
-            console.log(err);
+            console.error(err);
             res.sendStatus(500)
         }
     }

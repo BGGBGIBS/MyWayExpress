@@ -27,7 +27,6 @@ var eventController = {
         res.status(200).json(new SuccessResponse(event));
     },
     create : async (req,res) => {
-        console.log("event", req.body);
         try {
             const event = await eventService.create(req.body);
             res.location('/event/' + event.id);

@@ -39,29 +39,6 @@ app.use('/api', router);
 
 
 
-// const jwtCheck = auth({
-//   audience: AUTH0_AUDIENCE,
-//   issuerBaseURL: AUTH0_ISSUER_BASE_URL,
-//   tokenSigningAlg: AUTH0_TOKEN_SIGNING_ALG
-// });
-
-// app.use(jwtCheck);
-
-
-
-// var request = require("request");
-
-// var options = { method: 'POST',
-//   url: `${AUTH0_ISSUER_BASE_URL}oauth/token`,
-//   headers: { 'content-type': 'application/json' },
-//   body: JSON.stringify({"client_id":AUTH0_CLIENT_ID,"client_secret":AUTH0_CLIENT_SECRET,"audience":AUTH0_AUDIENCE,"grant_type":"client_credentials"}) };
-
-// request(options, function (error, response, body) {
-//   if (error) throw new Error(error);
-//   console.log("BODY : ",body);
-// });
-
-
 app.listen(process.env.PORT, () => {
     console.log(`Server API started on port:${process.env.PORT}`);
 })

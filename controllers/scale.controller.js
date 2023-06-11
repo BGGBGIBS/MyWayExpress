@@ -27,7 +27,6 @@ var scaleController = {
         res.status(200).json(new SuccessResponse(scale));
     },
     create : async (req,res) => {
-        console.log("scale", req.body);
         try {
             const scale = await scaleService.create(req.body);
             res.location('/scale/' + scale.id);

@@ -1,10 +1,3 @@
-// class PointGeographique {
-//   constructor(lon, lat) {
-//     this.lon = lon;
-//     this.lat = lat;
-//   }
-// }
-
 module.exports = class AresInstitution {
   constructor(data) {
     this.type_d_etablissement = data.type_d_etablissement;
@@ -38,30 +31,3 @@ module.exports = class AresInstitution {
     this.point_geographique = data.point_geographique;
   }
 }
-
-// module.exports = class AresInstitution{
-//   constructor( data ) {
-//     this.id = data.id;
-//     this.timestamp = data.timestamp;
-//     this.size = data.size;
-//     this.fields = data.fields;
-//   }
-// }
-
-  
-//   class Link {
-//     constructor(rel, href) {
-//       this.rel = rel;
-//       this.href = href;
-//     }
-//   }
-  
-// module.exports = class AresInstitution {
-//     constructor(links, record) {
-//       this.links = links.map(link => new Link(link.rel, link.href));
-//       this.record = new RecordData(record);
-//     }
-// }
-
-
-  

@@ -27,7 +27,6 @@ var occupationController = {
         res.status(200).json(new SuccessResponse(occupation));
     },
     create : async (req,res) => {
-        console.log("occupation", req.body);
         try {
             const occupation = await occupationService.create(req.body);
             res.location('/occupation/' + occupation.id);

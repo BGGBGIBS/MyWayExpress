@@ -27,7 +27,6 @@ var skillController = {
         res.status(200).json(new SuccessResponse(skill));
     },
     create : async (req,res) => {
-        console.log("skill", req.body);
         try {
             const skill = await skillService.create(req.body);
             res.location('/skill/' + skill.id);

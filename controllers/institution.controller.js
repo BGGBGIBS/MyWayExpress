@@ -8,7 +8,6 @@ var institutionController = {
         const { offset, limit } = req.pagination;
 
         const { institutions, count } = await institutionService.getAll(offset, limit);
-        console.log("INSTITUTIONS : ", institutions);
         res.status(200).json(new SuccessArrayResponse(institutions, count));
     },
     getById : async (req,res) => {
@@ -28,7 +27,6 @@ var institutionController = {
         res.status(200).json(new SuccessResponse(institution));
     },
     create : async (req,res) => {
-        console.log("institution", req.body);
         try {
             const institution = await institutionService.create(req.body);
             res.location('/institution/' + institution.id);

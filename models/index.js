@@ -4,10 +4,7 @@ var DataTypes = require("sequelize").DataTypes;
 
 var { DB_PORT, DB_SERVER, DB_DATABASE, DB_USERNAME, DB_PASSWORD } = process.env;
 var {connectionString, S_DB_CATALOG, S_DB_PROVIDER, S_DB_DATASOURCE, S_DB_USER_ID, S_DB_PASSWORD } = process.env;
-// var sequelize = new Sequelize(DB_DATABASE, DB_USERNAME, DB_PASSWORD, {
-//     host : DB_SERVER,
-//     dialect : 'mssql' 
-// })
+
 
 const sequelize = new Sequelize(DB_DATABASE, DB_USERNAME, DB_PASSWORD, {
     host: DB_SERVER,
@@ -33,27 +30,6 @@ const sequelize = new Sequelize(DB_DATABASE, DB_USERNAME, DB_PASSWORD, {
       }
   });
 
-
-//   const sequelize = new Sequelize(connectionString, {
-//     dialect: 'mssql',
-//     dialectModule: require('tedious'),
-//     logging: false,
-//     pool: {
-//       max: 5,
-//       min: 0,
-//       acquire: 30000,
-//       idle: 10000
-//     },
-//     define: {
-//       timestamps: false
-//     },
-//     dialectOptions: {
-//       options: {
-//         useUTC: false,
-//         dateFirst: 1
-//       }
-//     }
-//   });
 
 
 const db = {};

@@ -27,7 +27,6 @@ var gradeController = {
         res.status(200).json(new SuccessResponse(grade));
     },
     create : async (req,res) => {
-        console.log("grade", req.body);
         try {
             const grade = await gradeService.create(req.body);
             res.location('/grade/' + grade.id);

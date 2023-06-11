@@ -27,7 +27,6 @@ var userController = {
         res.status(200).json(new SuccessResponse(user));
     },
     create : async (req,res) => {
-        console.log("user", req.body);
         try {
             const user = await userService.create(req.body);
             res.location('/user/' + user.id);

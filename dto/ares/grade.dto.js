@@ -13,17 +13,29 @@ module.exports = class AresGrade {
 }
 module.exports = class AresEtude {
     constructor(data) {
+      // this.code_etudes = data.code_etudes;
+      // this.intitule_des_etudes_titre_delivre_a_l_issue_des_etudes = data.intitule_des_etudes_titre_delivre_a_l_issue_des_etudes;
+      // this.type_d_etablissement = data.type_d_etablissement;
+      // this.cycle = data.cycle;
+      // this.domaine_paysage = data.domaine_paysage;
+      // this.code_grade_academique = data.code_grade_academique;
+      // this.grade_academique = data.grade_academique;
+      // this.type_finalite = data.type_finalite;
+      // this.finalite = data.finalite;
+      // this.orientation = data.orientation;
+      // this.titre_delivre_a_l_issue_des_etudes = data.titre_delivre_a_l_issue_des_etudes;
+
       this.code_etudes = data.code_etudes;
-      this.intitule_des_etudes_titre_delivre_a_l_issue_des_etudes = data.intitule_des_etudes_titre_delivre_a_l_issue_des_etudes;
-      this.type_d_etablissement = data.type_d_etablissement;
+      this.intitule_des_etudes = data.intitule_des_etudes;
+      this.type_d_enseignement = data.type_d_enseignement;
       this.cycle = data.cycle;
+      this.forme_d_etudes = data.forme_d_etudes;
       this.domaine_paysage = data.domaine_paysage;
       this.code_grade_academique = data.code_grade_academique;
-      this.grade_academique = data.grade_academique;
-      this.type_finalite = data.type_finalite;
+      this.intitule_des_grades_academiques_dont_intitule_de_la_finalite = data.intitule_des_grades_academiques_dont_intitule_de_la_finalite;
       this.finalite = data.finalite;
-      this.orientation = data.orientation;
       this.titre_delivre_a_l_issue_des_etudes = data.titre_delivre_a_l_issue_des_etudes;
+  
     }
   }
   
